@@ -1,0 +1,44 @@
+.page {
+  margin: 0;
+  min-width: 320px;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: all $durationTime;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+h1,
+h3,
+h4,
+p,
+input,
+button {
+  margin: 0;
+}
+
+input,
+button {
+  border: none;
+}

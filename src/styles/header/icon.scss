@@ -1,0 +1,21 @@
+.icon {
+  width: 24px;
+  height: 24px;
+  @include hover(transform, scale(1.1));
+
+  &--menu {
+    background-image: url(../images/icons/menu.svg);
+  }
+
+  &--menu-hidden {
+    visibility: hidden;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icons/close.svg);
+  }
+}

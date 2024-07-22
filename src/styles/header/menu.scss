@@ -1,0 +1,76 @@
+.menu {
+  min-width: 320px;
+  height: 100%;
+
+  &__container {
+    display: grid;
+    place-items: center;
+    background-color: $subtitle-date-color;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    width: 100%;
+    padding-block: 27px;
+    background-color: $subtitle-date-color;
+  }
+
+  &__backround {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $backround-menu-color;
+    opacity: 0.5;
+    z-index: -1;
+    height: 100%;
+  }
+
+  &__top {
+    display: flex;
+    gap: 28px;
+
+    &--right {
+      display: flex;
+      gap: 28px;
+    }
+  }
+
+  @include onTablet {
+    &__content {
+      padding-block: 40px;
+      @include pageGrid;
+    }
+
+    &__left {
+      grid-column: 1 / 4;
+    }
+
+    &__top {
+      gap: 38px;
+
+      &--right {
+        gap: 20px;
+      }
+    }
+  }
+
+  @include onDesktop {
+    &__content {
+      box-sizing: initial;
+      padding-block: 40px 48px;
+    }
+
+    &__left {
+      grid-column: 1 / 6;
+    }
+
+    &__top {
+      gap: 102px;
+
+      &--right {
+        gap: 72px;
+      }
+    }
+  }
+}

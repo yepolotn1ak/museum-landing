@@ -1,0 +1,99 @@
+.galary {
+  &__title {
+    color: $title-color;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 100%;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--photo {
+      width: 280px;
+      @include hover(transform, scale(1.05));
+
+      @include onTablet {
+        width: 340px;
+      }
+    }
+
+    &--buttons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--buttons-button {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: $subtitle-date-color;
+      cursor: pointer;
+      @include hover(transform, scale(1.1));
+    }
+
+    &--img-container {
+      display: flex;
+      gap: 16px;
+      margin-block: 40px 20px;
+
+      @include onTablet {
+        gap: 20px;
+        margin-block: 48px 32px;
+      }
+    }
+  }
+
+  &__exhibition {
+    margin-top: 56px;
+
+    @include onDesktop {
+      @include pageGrid;
+      row-gap: 30px;
+
+      &--photo {
+        background-size: cover;
+        background-position: center;
+        @include hover(transform, scale(1.05));
+
+        &:first-child {
+          grid-column: span 4;
+          height: 600px;
+          background-image: url(../images/galary/exhibition/img-1.png);
+        }
+
+        &:nth-child(2) {
+          grid-column: span 8;
+          height: 600px;
+          background-image: url(../images/galary/exhibition/img-2.png);
+        }
+
+        &:nth-child(3) {
+          grid-column: span 8;
+          height: 360px;
+          background-image: url(../images/galary/exhibition/img-3.png);
+        }
+
+        &:last-child {
+          grid-column: span 4;
+          height: 360px;
+          background-image: url(../images/galary/exhibition/img-4.png);
+        }
+      }
+    }
+  }
+}
